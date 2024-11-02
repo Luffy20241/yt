@@ -1,0 +1,8 @@
+# requirements.txt
+asyncio
+pyrofork
+tgcrypto
+yt-dlp
+python-dotenv==1.0.0
+aiosqlite
+asyncio
