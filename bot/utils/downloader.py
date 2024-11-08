@@ -21,7 +21,7 @@ ydl_opts = {
     'age_limit': 100,
     'geo_bypass': True,
     'geo_bypass_country': 'US',
-    'cookies': os.path.expanduser(COOKIES_PATH),  # Ensures cookies path is resolved
+    'cookies': COOKIES_PATH,  # Ensures cookies path is resolved
     'logger': LOGGER,
     'progress_hooks': [],
     'allow_multiple_video_streams': True,
@@ -118,7 +118,7 @@ async def download_video(url, format_id, output_path, status_msg):
             'outtmpl': output_path,
             'quiet': False,
             'no_warnings': True,
-            'cookies': os.path.expanduser(COOKIES_PATH),  # Ensures cookies path is resolved
+            'cookies': COOKIES_PATH,  # Ensures cookies path is resolved
             'logger': LOGGER,
             'progress_hooks': [_on_progress(status_msg, loop)],
             'merge_output_format': 'mp4'
