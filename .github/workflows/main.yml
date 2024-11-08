@@ -1,0 +1,29 @@
+name: Run Docker Container
+
+on:
+  workflow_dispatch: # Manually trigger the workflow
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  run-docker-app:
+    name: Build and Run Docker Container
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Build Docker Image
+      - name: Build Docker Image
+        run: |
+          docker build -t my-app-image .
+
+      # Step 3: Run Docker Container
+      - name: Run Docker Container
+        run: |
+          docker run -d --name my-running-app my-app-image
+
+     
